@@ -1,0 +1,11 @@
+
+NAME           MLETEST         WINDOWAPI
+
+DESCRIPTION    'MLE test program - Dan Lee'
+
+PROTMODE
+
+HEAPSIZE       16384
+STACKSIZE      16384
+
+

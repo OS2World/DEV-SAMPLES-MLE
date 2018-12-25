@@ -1,0 +1,14 @@
+
+all: mletest.exe
+
+mletest.obj: mletest.c mletest.h
+     icc -c -ti+ -ss -W3 mletest.c
+
+mletest.res: mletest.rc
+     rc -r mletest
+
+mletest.exe: mletest.obj mletest.def mletest.res
+     link386 /L /NOP /DE mletest,,,,mletest
+     rc mletest.res mletest.exe
+
+

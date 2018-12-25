@@ -1,0 +1,52 @@
+
+#include <os2.h>
+#include "mletest.h"
+
+MENU ID_RESOURCES
+{
+    SUBMENU  "~Actions",   IDM_ACTIONS
+    {
+        MENUITEM "~Search for string",          IDM_SEARCH
+        MENUITEM "~Change font",                IDM_CHANGEFONT
+        MENUITEM "~Export to buffer",           IDM_EXPORTTEXT
+        MENUITEM SEPARATOR
+        MENUITEM "E~xit",                       IDM_EXIT
+    }
+}
+
+
+DLGTEMPLATE IDDLG_GETSRCHSTRING LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "", 0, 10, 10, 150, 50,
+       FS_NOBYTEALIGN | FS_DLGBORDER | WS_VISIBLE | WS_SAVEBITS
+    BEGIN
+
+        //Search string entry field
+        CONTROL "Search for:", IDD_TEXT_SEARCHSTRING,
+           10, 30, 50, 8,
+           WC_STATIC,
+           SS_TEXT | DT_LEFT | WS_VISIBLE
+        CONTROL "",           IDD_SEARCHSTRING,
+           60, 30, 60, 8,
+           WC_ENTRYFIELD,
+           ES_LEFT | ES_MARGIN | WS_VISIBLE | WS_TABSTOP | ES_AUTOSCROLL
+
+
+        //Okay button
+        CONTROL "OK", IDD_BTN_OK,
+           20,  8,  40,  13,
+           WC_BUTTON,
+           BS_PUSHBUTTON | WS_VISIBLE | WS_TABSTOP | WS_GROUP | BS_DEFAULT
+
+        //Cancel button
+        CONTROL "Cancel", IDD_BTN_CANCEL,
+           70,  8,  40,  13,
+           WC_BUTTON,
+           BS_PUSHBUTTON | WS_VISIBLE
+
+    END
+END
+
+
+
+
